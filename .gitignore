@@ -6,8 +6,6 @@
 *.log.*
 obj
 bin
-ErrorLogs
-Packages
 *~
 *.swp
 _ReSharper*
