@@ -47,7 +47,7 @@ namespace Web.Infrastructure
             get
             {
                 var customConnection = ConfigurationManager.ConnectionStrings[Environment.MachineName] != null;
-                var connectionStringName = customConnection ? Environment.MachineName : "RavenDB";
+                var connectionStringName = customConnection ? Environment.MachineName : "RAVENHQ_CONNECTION_STRING";
                 return connectionStringName;
             }
         }
