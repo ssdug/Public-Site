@@ -1,8 +1,13 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@model IEnumerable<Web.Models.Presentation>
+
+@{
+    ViewBag.Title = "Home";
 }
 
-<h2>@ViewBag.Message</h2>
-<p>
-    This is our public website.
-</p>
+<ul>
+    @foreach (var presentation in Model)
+    {
+        <li>@presentation.Title</li>
+    }
+        
+</ul>
