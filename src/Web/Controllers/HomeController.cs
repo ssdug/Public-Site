@@ -42,14 +42,14 @@ namespace Web.Controllers
                                        {
                                            Title = "Node.js & Azure",
                                            Description = "woot",
-                                           Presenter = presenter,
+                                           Presenter = new PresenterReference{ Id = presenter.Email, Name = presenter.Name },
                                            Booked = true,
                                            PresentationDate = new DateTime(2012, 3, 8)
                                        };
 
                 Session.Store(presentation);
 
-                presenter.Presentations.Add(presentation.Id);
+                presenter.Presentations.Add(new PresentationReference{ Id = presentation.Id, Title = presentation.Title});
 
                 Session.Store(presenter, presenter.Email);
             }
