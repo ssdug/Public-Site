@@ -15,9 +15,9 @@ The active team are using several resources to manage the project, to gain acces
 
 To run this project locally you must have a few things installed:
 
-	- IIS Express: http://www.microsoft.com/download/en/details.aspx?id=1038
-	- TestDriven.NET*: http://testdriven.net/download.aspx
-	* only if you would like to run unit tests in visual studio.
+- IIS Express: http://www.microsoft.com/download/en/details.aspx?id=1038
+- TestDriven.NET*: http://testdriven.net/download.aspx
+* only if you would like to run unit tests in visual studio.
 
 Once you have the tooling installed and the solution will build in Visual Studio, you are ready to run the site. Start by running the RavenDB server located in the packages directory.
 
