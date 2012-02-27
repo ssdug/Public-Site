@@ -6,10 +6,10 @@ This project is for the South Sound .NET Users Group.
 
 The active team are using several resources to manage the project, to gain access to some of these resources contact either Brad, Cam or Bobby.
 
-	- Source: [http://www.github.com/ssdnug/Public-Site](http://www.github.com/ssdnug/Public-Site)
-	- Live Site: http://ssdnug.apphb.com/
-	- Tasks: http://www.agilezen.com
-	- Communication: https://www.facebook.com/groups/175181635917238/
+- Source: [http://www.github.com/ssdnug/Public-Site](http://www.github.com/ssdnug/Public-Site)
+- Live Site: http://ssdnug.apphb.com/
+- Tasks: http://www.agilezen.com
+- Communication: https://www.facebook.com/groups/175181635917238/
 
 # Running Site Locally
 
