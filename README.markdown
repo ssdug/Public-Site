@@ -17,9 +17,10 @@ To run this project locally you must have a few things installed:
 
 - IIS Express: http://www.microsoft.com/download/en/details.aspx?id=1038
 - TestDriven.NET*: http://testdriven.net/download.aspx
-* only if you would like to run unit tests in visual studio.
 
-Once you have the tooling installed and the solution will build in Visual Studio, you are ready to run the site. Start by running the RavenDB server located in the packages directory.
+  * only if you would like to run unit tests in visual studio.
+
+Once you have the tooling installed and the solution will build in Visual Studio, you are ready to run the site. Start by running the RavenDB server located in the packages directory, then fire up the web site project.
 
 In PowerShell from the root directory of the project:
 
@@ -28,5 +29,6 @@ C:\Projects\Public-Site [master]> .\packages\RavenDB.1.0.616\server\Raven.Server
 ```
 Note: To stop the server, type "q" and press the Enter key.
 
+You can browse the RavenDB management site at http://localhost:8080
 
-fus ro dah!
+## fus ro dah!
