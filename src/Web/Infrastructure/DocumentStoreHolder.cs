@@ -27,15 +27,9 @@ namespace Web.Infrastructure
                     if (documentStore != null)
                         return documentStore;
 
-                    var parser = ConnectionStringParser<RavenConnectionStringOptions>.FromConnectionStringName("RavenDB");
-                    
-                    parser.Parse();
-
                     documentStore = new DocumentStore
                     {
                         ConnectionStringName = ConnectionStringName,
-                        ApiKey = parser.ConnectionStringOptions.ApiKey,
-                        Url = parser.ConnectionStringOptions.Url,
                     };
 
 
