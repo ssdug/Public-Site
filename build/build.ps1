@@ -4,6 +4,7 @@ properties {
 
 include .\master_build.ps1
 include .\test_build.ps1
+include .\ravendb_tasks.ps1
 task default -depends compile, test
 
 function find_file([string] $fileName)
