@@ -4,10 +4,25 @@
     ViewBag.Title = "Home";
 }
 
-<ul>
-    @foreach (var presentation in Model)
-    {
-        <li>@presentation.Title</li>
-    }
-        
-</ul>
+@foreach (var presentation in Model)
+{
+    <div class="hero-unit" id="@presentation.Id">
+        <h1>@presentation.Title by @presentation.Presenter.Name</h1>
+        <h2>@presentation.PresentationDate</h2>
+        <p>@presentation.Description</p>
+        <p><a class="btn primary large" href="#">Next &raquo;</a></p>     
+    </div>        
+}
+
+<div class="row"> 
+        <div class="span5"> 
+            Where when who what...
+        </div> 
+        <div class="span5"> 
+            <img src="@Url.Content("~/Content/images/microsoft_logo.jpg")" />
+       </div> 
+        <div class="span6"> 
+            <img src="@Url.Content("~/Content/images/location.gif")" />
+        </div> 
+</div>
+<script src="@Url.Content("~/Content/Scripts/script.js")"></script>
