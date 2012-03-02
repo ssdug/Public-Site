@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using Web.Models;
 
@@ -49,8 +47,6 @@ namespace Web.Controllers
 
                 Session.Store(presentation);
 
-                presenter.Presentations.Add(new PresentationReference { Id = presentation.Id, Title = presentation.Title });
-
                 Session.Store(presenter, presenter.Email);
             }
             else
@@ -73,8 +69,6 @@ namespace Web.Controllers
                 };
 
                 Session.Store(presentation);
-
-                presenter.Presentations.Add(new PresentationReference { Id = presentation.Id, Title = presentation.Title });
 
                 Session.Store(presenter, presenter.Email);
             }
