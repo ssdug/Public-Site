@@ -7,6 +7,7 @@ namespace Web.Infrastructure.Helpers
 {
     public static class UrlExtensions
     {
+        //gravatar support from: http://hackingon.net/post/ASPNET-MVC-Gravatar-Helpers.aspx
         public static string Gravatar(this UrlHelper url, string emailAddress)
         {
             var baseUrl = "http://www.gravatar.com/avatar/{0}";
