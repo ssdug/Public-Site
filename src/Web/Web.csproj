@@ -99,23 +99,20 @@
   <ItemGroup>
     <Content Include="Content\bootstrap-1.3.0.css" />
     <Content Include="Content\bootstrapmvc.css" />
+    <Content Include="Content\images\appharbor.png" />
+    <Content Include="Content\images\codesmart.png" />
+    <Content Include="Content\images\INETASponsoredEvent.jpg" />
     <Content Include="Content\images\location.gif" />
     <Content Include="Content\images\microsoft_logo.jpg" />
+    <Content Include="Content\images\Milestone_Logo_Small.jpg" />
+    <Content Include="Content\images\pluralsight-fullcolor-175x50-v1.png" />
+    <Content Include="Content\images\RavenDb_Logo.png" />
+    <Content Include="Content\images\tekpub_logo-200.png" />
+    <Content Include="Content\images\UGSS_logo.png" />
+    <Content Include="Content\images\ug_discount_120x240.gif" />
+    <Content Include="Content\images\Wintellect_Logo_web.gif" />
     <Content Include="Content\normalize.css" />
-    <Content Include="Content\Scripts\script.js" />
-    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
-    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
-    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
-    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
-    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Scripts\script.js" />
     <Content Include="Content\themes\base\jquery.ui.accordion.css" />
     <Content Include="Content\themes\base\jquery.ui.all.css" />
     <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
@@ -131,16 +128,12 @@
     <Content Include="Content\themes\base\jquery.ui.tabs.css" />
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Scripts\jquery-1.5.1-vsdoc.js" />
-    <Content Include="Content\Scripts\jquery-1.5.1.js" />
-    <Content Include="Content\Scripts\jquery-1.5.1.min.js" />
-    <Content Include="Content\Scripts\jquery-ui-1.8.11.js" />
-    <Content Include="Content\Scripts\jquery-ui-1.8.11.min.js" />
-    <Content Include="Content\Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Content\Scripts\jquery.validate.js" />
-    <Content Include="Content\Scripts\jquery.validate.min.js" />
-    <Content Include="Content\Scripts\modernizr-1.7.js" />
-    <Content Include="Content\Scripts\modernizr-1.7.min.js" />
+    <Content Include="README.jQuery.vsdoc.txt" />
+    <Content Include="Scripts\jquery-1.7.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Scripts\jquery.cycle.lite.js" />
+    <Content Include="Scripts\modernizr-2.0.6-development-only.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -150,10 +143,6 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Content\Scripts\jquery.unobtrusive-ajax.js" />
-    <Content Include="Content\Scripts\jquery.unobtrusive-ajax.min.js" />
-    <Content Include="Content\Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Content\Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
