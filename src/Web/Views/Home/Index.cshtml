@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Web.Models.Presentation>
+﻿@using Web.Infrastructure.Helpers
+@model IEnumerable<Web.Models.Presentation>
 
 @{
     ViewBag.Title = "Home";
@@ -7,9 +8,11 @@
 @foreach (var presentation in Model)
 {
     <div class="hero-unit" id="@presentation.Id">
-        <h1>@presentation.Title by @presentation.Presenter.Name</h1>
-        <h2>@presentation.PresentationDate</h2>
-        <p>@presentation.Description</p>
+        <h1>@presentation.Title</h1> 
+        <img class="presenter-image" src="@Url.Gravatar(@presentation.Presenter.Id, 52)" />
+        <h2>with @presentation.Presenter.Name</h2>
+        <h3>on @presentation.PresentationDate.ToLongDateString()</h3>
+        <p class="clearfix">@presentation.Description</p>
         <p><a class="btn primary large" href="#">Next &raquo;</a></p>     
     </div>        
 }

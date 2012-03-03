@@ -91,6 +91,7 @@
     </Compile>
     <Compile Include="Infrastructure\DocumentStoreHolder.cs" />
     <Compile Include="Infrastructure\EnumerableExtensions.cs" />
+    <Compile Include="Infrastructure\Helpers\UrlHelper.cs" />
     <Compile Include="Models\Presentation.cs" />
     <Compile Include="Models\Presenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -149,7 +150,6 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Content\Site.css" />
     <Content Include="Content\Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Content\Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Content\Scripts\jquery.validate.unobtrusive.js" />
