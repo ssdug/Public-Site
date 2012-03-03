@@ -24,6 +24,8 @@
     <div class="container">
         @RenderBody()
         <footer>
+            <p>Hosted free by AppHarbor</p>
+            <p><a href="">Privacy Statement</a></p>
             @Raven.Client.MvcIntegration.RavenProfiler.CurrentRequestSessions()
         </footer>
     </div>
