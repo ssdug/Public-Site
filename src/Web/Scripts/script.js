@@ -1,9 +1,15 @@
 ﻿(function ($) {
-    $(".hero-unit:first").show();
+  $(".hero-unit:first").show();
 
-    $(".hero-unit .btn").click(function (e) {
+  $(".hero-unit .btn").click(function (e) {
 
-        e.preventDefault();
-    });
+    e.preventDefault();
+  });
 
 })(jQuery);
+
+$(document).ready(function () {
+  $('.slideshow').cycle({
+    fx: 'fade'
+  });
+});
