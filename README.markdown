@@ -11,24 +11,33 @@ The active team are using several resources to manage the project, to gain acces
 - Tasks: http://www.agilezen.com
 - Communication: https://www.facebook.com/groups/175181635917238/
 
-# Running Site Locally
+# Building The Site
 
-To run this project locally you must have a few things installed:
-
-- IIS Express: http://www.microsoft.com/download/en/details.aspx?id=1038
-- TestDriven.NET*: http://testdriven.net/download.aspx
-
-  * only if you would like to run unit tests in visual studio.
-
-Once you have the tooling installed and the solution will build in Visual Studio, you are ready to run the site. Start by running the RavenDB server located in the packages directory, then fire up the web site project.
-
-In PowerShell from the root directory of the project:
+There is a common psake based tasks script located in the root of the source repository. To build the site open PowerShell and issue the following command:
 
 ```
-C:\Projects\Public-Site [master]> .\packages\RavenDB.1.0.616\server\Raven.Server.exe
+C:\Projects\Public-Site [master]> .\tasks.ps1
 ```
+
+This will compile the source and execute all tests, which are the default tasks defined in the tasks.ps1.
+
+# Running RavenDB Server Locally
+
+The project uses RavenDB as a data store. To run the site locally you must have the RavenDB server running. You can use the following command in PowerShell to start the server:
+
+```
+C:\Projects\Public-Site [master]> .\tasks.ps1 server
+```
+
 Note: To stop the server, type "q" and press the Enter key.
 
 You can browse the RavenDB management site at http://localhost:8080
+
+You may want to clear all data out of the database to get to a clean state, to do so use the following command from PowerShell:
+
+```
+C:\Projects\Public-Site [master]> .\tasks.ps1 clean-data
+```
+There is a backup file located in docs/inital-data/InitalData.raven.dump. You can use the import task in the RavenDB management site to import the backup to get some sample data into your database.
 
 ## fus ro dah!
