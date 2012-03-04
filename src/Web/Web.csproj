@@ -104,6 +104,7 @@
     <Content Include="Content\images\INETASponsoredEvent.jpg" />
     <Content Include="Content\images\location.gif" />
     <Content Include="Content\images\microsoft_logo.jpg" />
+    <Content Include="Content\images\MilestoneLogoBig.jpg" />
     <Content Include="Content\images\pluralsight-fullcolor-175x50-v1.png" />
     <Content Include="Content\images\RavenDb_Logo.png" />
     <Content Include="Content\images\resized\appharbor.png" />
