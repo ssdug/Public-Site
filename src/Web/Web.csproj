@@ -107,6 +107,17 @@
     <Content Include="Content\images\Milestone_Logo_Small.jpg" />
     <Content Include="Content\images\pluralsight-fullcolor-175x50-v1.png" />
     <Content Include="Content\images\RavenDb_Logo.png" />
+    <Content Include="Content\images\resized\appharbor.png" />
+    <Content Include="Content\images\resized\codesmart.png" />
+    <Content Include="Content\images\resized\INETASponsoredEvent.jpg" />
+    <Content Include="Content\images\resized\microsoft_logo.jpg" />
+    <Content Include="Content\images\resized\Milestone_Logo.jpg" />
+    <Content Include="Content\images\resized\pluralsight-fullcolor-250x55-v1.png" />
+    <Content Include="Content\images\resized\RavenDb_Logo_toFix.png" />
+    <Content Include="Content\images\resized\tekpub_logo-200.png" />
+    <Content Include="Content\images\resized\UGSS_logo.png" />
+    <Content Include="Content\images\resized\ug_discount_120x240.gif" />
+    <Content Include="Content\images\resized\Wintellect_Logo_web.gif" />
     <Content Include="Content\images\tekpub_logo-200.png" />
     <Content Include="Content\images\UGSS_logo.png" />
     <Content Include="Content\images\ug_discount_120x240.gif" />
