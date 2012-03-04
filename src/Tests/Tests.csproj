@@ -108,6 +108,7 @@
     <Compile Include="..\ProjectInfo.cs">
       <Link>Properties\ProjectInfo.cs</Link>
     </Compile>
+    <Compile Include="Controllers\ErrorControllerTests.cs" />
     <Compile Include="Controllers\HomeControllerTests.cs" />
     <Compile Include="RealityTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
