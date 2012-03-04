@@ -25,8 +25,7 @@
     <div class="container">
         @RenderBody()
         <footer>
-            <p>Hosted free by AppHarbor</p>
-            <p><a href="">Privacy Statement</a></p>
+            <span class="pull-left">Hosted free by AppHarbor</span><span class="pull-right">@Html.ActionLink("Privacy Statement", "Privacy", "Home")</span>
             @Raven.Client.MvcIntegration.RavenProfiler.CurrentRequestSessions()
         </footer>
     </div>
