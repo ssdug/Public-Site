@@ -4,78 +4,69 @@
 @{
     ViewBag.Title = "Home";
 }
-
-@foreach (var presentation in Model)
-{
-    <div class="hero-unit" id="@presentation.Id">
-        <h1>@presentation.Title</h1> 
-        <img alt="@presentation.Presenter.Name" class="presenter-image" src="@Url.Gravatar(@presentation.Presenter.Id, 52)" />
-        <h2>with @presentation.Presenter.Name</h2>
-        <h3>on @presentation.PresentationDate.ToLongDateString()</h3>
-        <p class="clearfix">@presentation.Description</p>
-        <p><a id="Next" class="btn primary large" href="#">Next &raquo;</a></p>     
-    </div>        
-}
-
-<div class="row"> 
-        <div class="span5"> 
-            <div class="row">
-                <div class="span2 infolabel">
-                    WHEN
+<div class="hero-unit">
+    <div id="presentations" class="carousel slide">
+        <div class="carousel-inner">
+            @foreach (var presentation in Model)
+            {
+                <div class="item">
+                    <img alt="@presentation.Presenter.Name" src="@Url.Gravatar(@presentation.Presenter.Id, 80)" />
+                    <h1>@presentation.Title</h1> 
+                    <h2>with @presentation.Presenter.Name on @presentation.PresentationDate.ToLongDateString()</h2>
+                    <p>@presentation.Description</p>
                 </div>
-                <div class="span3 infoitem">
-                    The 2nd Thursday of each month
-                </div>
+        
+            }
+        </div>
+        <p>
+            <a id="Next" class="btn btn-primary btn-large" href="#presentations" data-slide="next">Next &raquo;</a>
+        </p>  
+     </div>   
+</div>  
+<div class="row detail-unit"> 
+    <div class="span4">
+        <h2>Details</h2>
+        <h4><em>WHEN:</em> The 2nd Thursday of each month</h4> 
+        <h4><em>WHERE:</em>Olympia Center<br />
+            222 Columbia NW<br />
+            Downtown Olympia</h4>
+        <h4><em>TIME:</em> 7:00 - 9:00 PM</h4>
+        <h4><em>CONTACT:</em> <a href="mailto:ssdotnet@live.com">ssdotnet@live.com</a></h4>
+    </div> 
+    <div class="span4">
+        <h2>Location</h2> 
+        <img width="320" height="250" alt="222 Columbia St. Olympia, WA 98501" src="http://maps.googleapis.com/maps/api/staticmap?center=222+columbia+st,+olympia,+wa+98501&zoom=15&size=320x250&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318&markers=color:red%7Ccolor:red%7Clabel:C%7C40.718217,-73.998284&&markers=222+columbia+st,+olympia,+wa+98501&sensor=false"/><br/>
+        <small>
+            <a href="http://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=222+columbia+st,+olympia,+wa+98501&amp;aq=0&amp;oq=222+&amp;sll=37.0625,-95.677068&amp;sspn=36.094886,79.013672&amp;ie=UTF8&amp;hq=&amp;hnear=222+Columbia+St+NW,+Olympia,+Washington+98501&amp;t=m&amp;ll=47.053751,-122.902594&amp;spn=0.014619,0.02738&amp;z=14&amp;iwloc=A"
+               style="color:#0000FF;text-align:left">View Larger Map</a>
+        </small>
+    </div> 
+    <div class="span4">
+        <h2>Sponsors</h2>
+        <div id="sponsors" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="item active"><a href="http://www.microsoft.com"><img src="@Url.Content("~/Content/images/sponsors/microsoft.jpg")" alt="Microsoft" /></a></div>
+                <div class="item"><a href="http://www.codesmart.com"><img src="@Url.Content("~/Content/images/sponsors/codesmart.png")" alt="CodeSmart" /></a></div>
+                <div class="item"><a href="http://www.ineta.org/"><img src="@Url.Content("~/Content/images/sponsors/ineta.jpg")" alt="INETA" /></a></div>
+                <div class="item"><a href="http://www.milestone-tech.com/"><img src="@Url.Content("~/Content/images/sponsors/milestone.jpg")" alt="Milestone" /></a></div>
+                <div class="item"><a href="http://www.pluralsight-training.net/microsoft/"><img src="@Url.Content("~/Content/images/sponsors/pluralsight.png")" alt="Pluralsight" /></a></div>
+                <div class="item"><a href="http://ravendb.net/"><img src="@Url.Content("~/Content/images/sponsors/ravendb.png")" alt="RavenDb" /></a></div>
+                <div class="item"><a href="http://tekpub.com/"><img src="@Url.Content("~/Content/images/sponsors/tekpub.png")" alt="TekPub" /></a></div>
+                <div class="item"><a href="http://oreilly.com/"><img src="@Url.Content("~/Content/images/sponsors/oreilly.gif")" alt="O'Reilly" /></a></div>
+                <div class="item"><a href="http://www.technicalcommunity.com"><img src="@Url.Content("~/Content/images/sponsors/ugss.png")" alt="User Group Support Services" /></a></div>
+                <div class="item"><a href="http://wintellect.com/"><img src="@Url.Content("~/Content/images/sponsors/wintellect.gif")" alt="Wintellect" /></a></div>
             </div>
-            <div class="row">
-                <div class="span3 infoitem" >
-                        Olympia Center<br />
-                        222 Columbia NW<br />
-                        Downtown Olympia
-                </div>
-                <div class="span2 infolabel">
-                    WHERE
-                </div>
-            </div>
-            <div class="row">
-                <div class="span2 infolabel">
-                    TIME
-                </div>
-                <div class="span3 infoitem vertpad">
-                    7:00-9:00 pm
-                </div>
-            </div>
-            <div class="row">
-                <div class="span3 infoitem vertpad">
-                    <a href="mailto:ssdotnet@live.com">ssdotnet@live.com</a>
-                </div>
-                <div class="span2 infolabel">
-                    CONTACT
-                </div>
-            </div>
-        </div> 
-        <div class="span6"> 
-            <img width="320" height="250" alt="222 Columbia St. Olympia, WA 98501" src="http://maps.googleapis.com/maps/api/staticmap?center=222+columbia+st,+olympia,+wa+98501&zoom=15&size=320x250&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&markers=color:green%7Clabel:G%7C40.711614,-74.012318&markers=color:red%7Ccolor:red%7Clabel:C%7C40.718217,-73.998284&&markers=222+columbia+st,+olympia,+wa+98501&sensor=false"/>
-            <small>
-                <a href="http://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=222+columbia+st,+olympia,+wa+98501&amp;aq=0&amp;oq=222+&amp;sll=37.0625,-95.677068&amp;sspn=36.094886,79.013672&amp;ie=UTF8&amp;hq=&amp;hnear=222+Columbia+St+NW,+Olympia,+Washington+98501&amp;t=m&amp;ll=47.053751,-122.902594&amp;spn=0.014619,0.02738&amp;z=14&amp;iwloc=A"
-                    style="color:#0000FF;text-align:left">View Larger Map</a>
-            </small>
-        </div> 
-        <div class="span5"> 
-          <div class="slideshow">
-             <div><a href="http://www.microsoft.com"><img src="@Url.Content("~/Content/images/sponsors/microsoft.jpg")" alt="Microsoft" /></a></div>
-            <div><a href="http://www.appharbor.com"><img src="@Url.Content("~/Content/images/sponsors/appharbor.png")" alt="AppHarbor" /></a></div>
-            <div><a href="http://www.codesmart.com"><img src="@Url.Content("~/Content/images/sponsors/codesmart.png")" alt="CodeSmart" /></a></div>
-            <div><a href="http://www.ineta.org/"><img src="@Url.Content("~/Content/images/sponsors/ineta.jpg")" alt="INETA" /></a></div>
-            <div><a href="http://www.milestone-tech.com/"><img src="@Url.Content("~/Content/images/sponsors/milestone.jpg")" alt="Milestone" /></a></div>
-            <div><a href="http://www.pluralsight-training.net/microsoft/"><img src="@Url.Content("~/Content/images/sponsors/pluralsight.png")" alt="Pluralsight" /></a></div>
-            <div><a href="http://ravendb.net/"><img src="@Url.Content("~/Content/images/sponsors/ravendb.png")" alt="RavenDb" /></a></div>
-            <div><a href="http://tekpub.com/"><img src="@Url.Content("~/Content/images/sponsors/tekpub.png")" alt="TekPub" /></a></div>
-            <div><a href="http://oreilly.com/"><img src="@Url.Content("~/Content/images/sponsors/oreilly.gif")" alt="O'Reilly" /></a></div>
-            <div><a href="http://www.technicalcommunity.com"><img src="@Url.Content("~/Content/images/sponsors/ugss.png")" alt="User Group Support Services" /></a></div>
-            <div><a href="http://wintellect.com/"><img src="@Url.Content("~/Content/images/sponsors/wintellect.gif")" alt="Wintellect" /></a></div>
-       </div> 
-       </div>
+        </div>  
+    </div>
         
 </div>
-<script type="text/javascript" src="@Url.Content("~/Scripts/script.js")"></script>
+<script src="@Url.Content("~/Scripts/bootstrap-carousel.js")" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+        $('#presentations .carousel-inner .item:first-child').addClass("active");
+        $('#presentations').carousel('pause');
+        $('#sponsors').carousel({
+            interval: 4000
+        });
+    });  
+</script>
