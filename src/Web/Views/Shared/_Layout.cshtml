@@ -10,24 +10,27 @@
     <script src="@Url.Content("~/Scripts/modernizr-2.0.6-development-only.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/jquery.cycle.lite.js")" type="text/javascript"></script>
 </head>
-<body>
-    <div class="topbar">
-        <div class="fill">
-            <div class="container">
-                <h3>@Html.ActionLink("South Sound .NET Users Group", "Index", "Home" )</h3>
-                <ul class="nav">
-                    <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                </ul>
+    <body>
+        <a href="https://github.com/ssdnug/public-site" target="_blank">
+            <img style="position: absolute; top: 0; right: 0; border: 0; z-index: 20000" src="https://a248.e.akamai.net/assets.github.com/img/7afbc8b248c68eb468279e8c17986ad46549fb71/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67"
+                alt="Fork me on GitHub">
+        </a>
+        <div class="topbar">
+            <div class="fill">
+                <div class="container">
+                    <h3>@Html.ActionLink("South Sound .NET", "Index", "Home" )</h3>
+                    <ul class="nav">
+                        <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container">
-        @RenderBody()
-        <footer>
-            <span class="pull-left">Hosted free by AppHarbor</span><span class="pull-right">@Html.ActionLink("Privacy Statement", "Privacy", "Home")</span>
-            @Raven.Client.MvcIntegration.RavenProfiler.CurrentRequestSessions()
-        </footer>
-    </div>
-</body>
+        <div class="container">
+            @RenderBody()
+            <footer>
+                <span class="pull-left">Hosted by <a href="http://www.appharbor.com">AppHarbor</a></span><span class="pull-right">@Html.ActionLink("Privacy Statement", "Privacy", "Home")</span>
+            </footer>
+        </div>
+    </body>
 </html>
