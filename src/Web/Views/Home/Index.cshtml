@@ -111,7 +111,10 @@
 </div>
 <script src="@Url.Content("~/Scripts/bootstrap-carousel.js")" type="text/javascript"></script>
 <script type="text/javascript">
-    (function ($) {
+    $('#sponsors').carousel({
+        interval: 4000
+    });
+    $(function () {
         var items = $("#presentations .item");
         var max = items.length;
         var idx = 0;
@@ -123,5 +126,5 @@
                 $(items[idx]).fadeIn();
             });
         });
-    })(jQuery);
+    });
 </script>
