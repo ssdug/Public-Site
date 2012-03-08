@@ -23,30 +23,38 @@ namespace SSDNUG.Tests.Controllers
         public void SetUp()
         {
             documentStore = new EmbeddableDocumentStore {RunInMemory = true}.Initialize();
-            presentations = Builder<Presentation>.CreateListOfSize(5)
-                                                .TheFirst(1).With(x => x.PresentationDate = DateTime.Today.AddDays(-1))
-                                                .With(x => x.Booked = true)
-                                                .TheNext(4).With(x => x.PresentationDate > DateTime.Today)
-                                                .With(x => x.Booked = true)
-                                                .TheLast(1).With(x => x.Booked = false)
-                                                .Build();
-            var session = documentStore.OpenSession();
-            presentations.Each(session.Store);
-            session.SaveChanges();
         }
 
         [Test]
         public void Index_should_display_three_upcoming_booked_presentations()
         {
+            var presentations = new[]
+                                    {
+                                        new Presentation { Booked = true, PresentationDate = DateTime.Today.AddMonths(-1)},
+                                        new Presentation { Booked = true, PresentationDate = DateTime.Today},
+                                        new Presentation { Booked = true, PresentationDate = DateTime.Today.AddMonths(1)},
+                                        new Presentation { Booked = true, PresentationDate = DateTime.Today.AddMonths(2)},
+                                        new Presentation { Booked = true, PresentationDate = DateTime.Today.AddMonths(3)},
+                                    };
+
+            PrepareSession(presentations);
+
             var controller = new HomeController { Session = documentStore.OpenSession() };
             var result = controller.Index() as ViewResult;
             var model = result.Model as IEnumerable<Presentation>;
 
             Assert.That(model.Count(), Is.EqualTo(3));
             Assert.That(model.All(x => x.Booked), Is.True);
-            Assert.That(model.All(x => x.PresentationDate > DateTime.Today), Is.True);
+            Assert.That(model.All(x => x.PresentationDate > DateTime.Today.AddDays(-7)), Is.True);
             Assert.That(model.Select(x => x.PresentationDate),
                 Is.EquivalentTo(model.OrderBy(x => x.PresentationDate).Select(x => x.PresentationDate)));
+        }
+
+        private void PrepareSession(IEnumerable<Presentation> presentations)
+        {
+            var session = documentStore.OpenSession();
+            presentations.Each(session.Store);
+            session.SaveChanges();
         }
     }
 }
