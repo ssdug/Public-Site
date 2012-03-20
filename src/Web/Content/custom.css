@@ -8,15 +8,25 @@ footer
 {
     margin-top: 50px;
 }
+.hero-unit h2
+{
+  margin-top: 30px;
+}
 .detail-unit h2
 {
  text-align:center;
  margin-bottom: 20px;
 }
-.item img 
+.hero-unit .item img 
 { 
     float:left; 
     padding: 10px 10px 0px 0px;
+}
+
+.item img 
+{ 
+	display:block; 
+	margin:auto; 
 }
 
 .item p

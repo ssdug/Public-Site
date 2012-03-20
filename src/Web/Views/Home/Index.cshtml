@@ -9,8 +9,8 @@
             @foreach (var presentation in Model)
             {
                 <div class="item">
-                    <img alt="@presentation.Presenter.Name" src="@Url.Gravatar(@presentation.Presenter.Id, 80)" />
                     <h1>@presentation.Title</h1>
+                    <img alt="@presentation.Presenter.Name" src="@Url.Gravatar(@presentation.Presenter.Id, 50)" />
                     <h2>
                         with @presentation.Presenter.Name on @presentation.PresentationDate.ToLongDateString()</h2>
                     <p>@presentation.Description</p>
@@ -19,7 +19,7 @@
             }
         </div>
         <p>
-            <a id="Next" class="btn btn-primary btn-large" href="#presentations" data-slide="next">
+            <a id="Next" class="btn btn-primary btn-large pull-right" href="#presentations" data-slide="next">
                 Next &raquo;</a>
         </p>
     </div>
