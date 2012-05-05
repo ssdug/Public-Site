@@ -66,7 +66,7 @@ namespace Updater
             //                           };
             //    DocumentSession.Store(newPresenter);
             //    DocumentSession.Delete(presenter);
-            }
+            //}
         }
     }
 }
