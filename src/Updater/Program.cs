@@ -19,8 +19,6 @@ namespace Updater
             using(DocumentSession = DocumentStoreHolder.DocumentStore.OpenSession())
             {
                 UpdatePresenters();
-                DeleteOldPresenters();
-                DeleteOldPresentations();
                 DocumentSession.SaveChanges();
             }
             Console.Write("The upgrade has completed.");
@@ -68,17 +66,7 @@ namespace Updater
                                        };
                 DocumentSession.Store(newPresenter);
                 DocumentSession.Delete(presenter);
-            }
-                
-        }
-
-        private static void DeleteOldPresenters()
-        {
-            
-        }
-
-        private static void DeleteOldPresentations()
-        {
+            }       
         }
     }
 }
