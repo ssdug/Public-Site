@@ -91,7 +91,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\DocumentStoreHolder.cs" />
-    <Compile Include="Infrastructure\EnumerableExtensions.cs" />
+    <Compile Include="Infrastructure\Extensions\EnumerableExtensions.cs" />
+    <Compile Include="Infrastructure\Extensions\StringExtensions.cs" />
     <Compile Include="Infrastructure\Helpers\UrlHelper.cs" />
     <Compile Include="Models\Presentation.cs" />
     <Compile Include="Models\Presenter.cs" />

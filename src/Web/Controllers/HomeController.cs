@@ -9,7 +9,7 @@ namespace Web.Controllers
     {
         public ActionResult Index()
         {
-            var upcomingPresentations = Session.Query<Presentation>()
+            var upcomingPresentations = DocumentSession.Query<Presentation>()
                                                 .Where(x => x.PresentationDate > DateTime.Today.AddDays(-7))
                                                 .Where(x => x.Booked)
                                                 .OrderBy(x => x.PresentationDate)

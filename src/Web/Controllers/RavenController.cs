@@ -10,21 +10,21 @@ namespace Web.Controllers
 {
     public abstract class RavenController : Controller
     {
-        public new IDocumentSession Session { get; set; }
+        public  IDocumentSession DocumentSession { get; set; }
 
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            Session = DocumentStoreHolder.DocumentStore.OpenSession();
+            DocumentSession = DocumentStoreHolder.DocumentStore.OpenSession();
         }
 
         protected override void OnActionExecuted(ActionExecutedContext filterContext)
         {
-            using (Session)
+            using (DocumentSession)
             {
                 if (filterContext.Exception != null)
                     return;
 
-                Session.SaveChanges();
+                DocumentSession.SaveChanges();
             }
         }
 

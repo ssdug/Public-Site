@@ -10,9 +10,13 @@
             {
                 <div class="item">
                     <h1>@presentation.Title</h1>
-                    <img alt="@presentation.Presenter.Name" src="@Url.Gravatar(@presentation.Presenter.Id, 50)" />
+                    @foreach(var presenter in presentation.Presenters)
+                    {
+                        <img alt="@presenter.Name" src="@Url.Gravatar(@presenter.Email, 50)" />
                     <h2>
-                        with @presentation.Presenter.Name on @presentation.PresentationDate.ToLongDateString()</h2>
+                        with @presenter.Name on @presentation.PresentationDate.ToLongDateString()</h2>    
+                    }
+                    
                     <p>@presentation.Description</p>
                 </div>
         
