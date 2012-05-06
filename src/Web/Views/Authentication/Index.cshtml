@@ -24,7 +24,7 @@
             function updateButton(response) {
                 var userInfo = $('#user-info');
                 FB.api('/me', function (response) {
-                    userInfo.innerHTML = '<img src="https://graph.facebook.com/' + response.id + '/picture">' + response.name;
+                    $('<img src="https://graph.facebook.com/' + response.id + '/picture">' + response.name).appendTo(userInfo);
                 });
             };
         });
