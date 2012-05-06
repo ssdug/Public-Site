@@ -4,7 +4,7 @@
     var facebook = {};
 
     facebook.options = {
-        appId: "188145164542799",
+        appId: "350746134981298",
         cookie: true,
         status: true,
         xfbml: true,
