@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Facebook Test Page";
+}
+
+<h2>@ViewBag.Title</h2>
+<a id="js-facebook-login-btn" class="btn btn-fb-reg">Login with Facebook</a>
+<script type="text/javascript">
+    require(['core', 'facebook'], function ($) {
+        $(function() {
+            $('#js-facebook-login-btn').on('click', function() {
+                FB.login(function(response) {
+                  if (response.authResponse) {
+                    console.log('User is connected to the application.');
+                    var accessToken = response.authResponse.accessToken;
+                  }
+                });
+            });
+        });
+    }); 
+</script>
