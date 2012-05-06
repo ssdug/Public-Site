@@ -15,6 +15,7 @@
                     if (response.authResponse) {
                         console.log('User is connected to the application.');
                         var accessToken = response.authResponse.accessToken;
+                        console.dir(response);
                     }
                 });
             });
@@ -24,6 +25,7 @@
             function updateButton(response) {
                 var userInfo = $('#user-info');
                 FB.api('/me', function (response) {
+                    console.dir(response);
                     $('<img src="https://graph.facebook.com/' + response.id + '/picture">' + response.name).appendTo(userInfo);
                 });
             };
