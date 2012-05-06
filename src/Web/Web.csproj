@@ -105,8 +105,6 @@
     <Content Include="Content\bootstrap\css\bootstrap.min.css" />
     <Content Include="Content\bootstrap\img\glyphicons-halflings-white.png" />
     <Content Include="Content\bootstrap\img\glyphicons-halflings.png" />
-    <Content Include="Content\bootstrap\js\bootstrap.js" />
-    <Content Include="Content\bootstrap\js\bootstrap.min.js" />
     <Content Include="Content\custom.css" />
     <Content Include="Content\images\sponsors\appharbor.png" />
     <Content Include="Content\images\sponsors\codesmart.png" />
@@ -137,8 +135,10 @@
     <Content Include="Content\themes\base\jquery.ui.tabs.css" />
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\jquery-1.7.1.min.js" />
-    <Content Include="Scripts\modernizr-2.0.6-development-only.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\core.js" />
+    <Content Include="Scripts\facebook.js" />
+    <Content Include="Scripts\require-jquery.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
