@@ -8,6 +8,7 @@
 <a id="js-facebook-login-btn" class="btn btn-fb-reg">Login with Facebook</a>
 <script type="text/javascript">
     require(['core', 'facebook'], function ($, facebook) {
+        facebook.setup();
         facebook.ready(function () {
             $('#js-facebook-login-btn').on('click', function () {
                 FB.login(function (response) {
