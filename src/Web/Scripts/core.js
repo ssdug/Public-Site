@@ -21,19 +21,43 @@ define(
         $(function () {
             facebook.setup();
             facebook.ready(function () {
-                FB.getLoginStatus( function (response) {
-                    if (response.status === 'connected') {
-                        var uid = response.authResponse.userID;
-                        var accessToken = response.authResponse.accessToken;
-                        console.log("Connected as " + uid + " with access token " + accessToken);
-                    } else if (response.status === 'not_authorized') {
-                        console.log("The user is logged into Facebook but app is not authorized");
-                    } else {
-                        console.log("The user is not logged into Facebook.");
-                    }
+                var login_button = $('#js-login-btn');
 
+                FB.getLoginStatus(function (response) {
+                    if (response.status === 'connected') {
+                        var accessToken = response.authResponse.accessToken;
+                        loginUser(accessToken);
+                    } else {
+                        login_button.on('click', function() {
+                            FB.login(function(response) {
+                                FB.api('/me', onSuccess);
+                            });
+                        });
+                    }
                 });
 
+                function loginUser(accessToken) {
+                    $.ajax({
+                        type: 'post',
+                        dataType: 'json',
+                        url: '/session/create',
+                        data: {
+                            facebookToken: accessToken
+                        },
+                        success: onSuccess,
+                        error: onError
+                    });
+                }
+
+                function onSuccess(user) {
+                    login_button.text(user.name);
+                }
+
+                function onError() {
+
+                }
             });
         });
+
+
     });

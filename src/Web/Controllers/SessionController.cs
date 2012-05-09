@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
+using System.Web.Security;
 using Facebook;
+using Web.Models;
 
 namespace Web.Controllers
 {
@@ -17,12 +16,27 @@ namespace Web.Controllers
             return View();
         }
 
-        public ActionResult Create(string facebookToken)
+        public JsonResult Create(string facebookToken)
         {
             var client = new FacebookClient(facebookToken);
             dynamic user = client.Get("me");
+            FormsAuthentication.SetAuthCookie(user.Username, false);
+            string userId = user.id;
+            var siteUser = DocumentSession.Query<User>()
+                                          .SingleOrDefault(x => x.Id == userId);
 
-          return Json(user);
+            if(siteUser == null)
+            {
+                var newUser = new User
+                                  {
+                                      Name = user.name,
+                                      Roles = { Role.User }
+                                  };
+
+                DocumentSession.Store(newUser, user.id);
+            }
+
+          return Json(new { user.id, user.name });
         }
 
     }
