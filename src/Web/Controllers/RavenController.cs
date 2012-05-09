@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Raven.Client;
-using Web.Infrastructure;
 
 namespace Web.Controllers
 {
@@ -12,9 +7,9 @@ namespace Web.Controllers
     {
         public  IDocumentSession DocumentSession { get; set; }
 
-        protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        protected RavenController(IDocumentSession documentSession)
         {
-            DocumentSession = DocumentStoreHolder.DocumentStore.OpenSession();
+            DocumentSession = documentSession;
         }
 
         protected override void OnActionExecuted(ActionExecutedContext filterContext)

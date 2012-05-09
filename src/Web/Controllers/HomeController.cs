@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Linq;
 using System.Web.Mvc;
+using Raven.Client;
 using Web.Models;
 
 namespace Web.Controllers
 {
     public class HomeController : RavenController
     {
+        public HomeController(IDocumentSession documentSession) : base(documentSession)
+        { }
+
         public ActionResult Index()
         {
             var upcomingPresentations = DocumentSession.Query<Presentation>()

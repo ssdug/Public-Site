@@ -34,6 +34,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\..\packages\Castle.Core.3.0.0.4001\lib\net40-client\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>..\..\packages\Castle.Windsor.3.0.0.4001\lib\net40\Castle.Windsor.dll</HintPath>
+    </Reference>
     <Reference Include="Facebook">
       <HintPath>..\..\packages\Facebook.6.0.16\lib\net40-client\Facebook.dll</HintPath>
     </Reference>
@@ -101,6 +107,10 @@
     <Compile Include="Infrastructure\Extensions\StringExtensions.cs" />
     <Compile Include="Infrastructure\Helpers\UrlHelper.cs" />
     <Compile Include="Infrastructure\Security\Require.cs" />
+    <Compile Include="Infrastructure\Windsor\Facilities\RavenPersistenceFacility.cs" />
+    <Compile Include="Infrastructure\Windsor\Installers\ControllerInstaller.cs" />
+    <Compile Include="Infrastructure\Windsor\Installers\RavenPersistenceInstaller.cs" />
+    <Compile Include="Infrastructure\Windsor\WindsorControllerFactory.cs" />
     <Compile Include="Models\Presentation.cs" />
     <Compile Include="Models\Presenter.cs" />
     <Compile Include="Models\User.cs" />
@@ -150,9 +160,6 @@
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </Content>
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -162,8 +169,6 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Areas\Administration\Models\" />
-    <Folder Include="Areas\Administration\Views\Shared\" />
     <Folder Include="Infrastructure\Indexes\" />
   </ItemGroup>
   <ItemGroup>
@@ -178,12 +183,6 @@
   <ItemGroup>
     <Content Include="Views\Error\Index.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Session\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Session\Info.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Administration\Views\Web.config" />

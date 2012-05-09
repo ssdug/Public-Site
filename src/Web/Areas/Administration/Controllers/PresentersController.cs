@@ -1,27 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using Raven.Client;
 using Web.Controllers;
 using Web.Infrastructure.Security;
+using Web.Models;
 
 namespace Web.Areas.Administration.Controllers
 {
-    [Require]
+    [Require(Role.Administrator)]
     public class PresentersController : RavenController
     {
-        //
-        // GET: /Administration/Presenters/
-        
+        public PresentersController(IDocumentSession documentSession) : base(documentSession)
+        { }
+
         public ActionResult Index()
         {
             return View();
-        }
-
-        protected override void OnAuthorization(AuthorizationContext filterContext)
-        {
-            var documentSession = ((RavenController)filterContext.Controller).DocumentSession;
         }
 
     }

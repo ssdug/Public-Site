@@ -2,25 +2,21 @@
 using System.Web.Mvc;
 using System.Web.Security;
 using Facebook;
+using Raven.Client;
 using Web.Models;
 
 namespace Web.Controllers
 {
     public class SessionController : RavenController
     {
-        //
-        // GET: /Session/
-
-        public ActionResult Index()
-        {
-            return View();
-        }
+        public SessionController(IDocumentSession documentSession) : base(documentSession)
+        { }
 
         public JsonResult Create(string facebookToken)
         {
             var client = new FacebookClient(facebookToken);
             dynamic user = client.Get("me");
-            FormsAuthentication.SetAuthCookie(user.Username, false);
+            
             string userId = user.id;
             var siteUser = DocumentSession.Query<User>()
                                           .SingleOrDefault(x => x.Id == userId);
@@ -34,7 +30,10 @@ namespace Web.Controllers
                                   };
 
                 DocumentSession.Store(newUser, user.id);
+                siteUser = newUser;
             }
+
+            FormsAuthentication.SetAuthCookie(siteUser.Id, false);
 
           return Json(new { user.id, user.name });
         }

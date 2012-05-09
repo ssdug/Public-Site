@@ -39,7 +39,7 @@ namespace SSDNUG.Tests.Controllers
 
             PrepareSession(presentations);
 
-            var controller = new HomeController { DocumentSession = documentStore.OpenSession() };
+            var controller = new HomeController(documentStore.OpenSession());
             var result = controller.Index() as ViewResult;
             var model = result.Model as IEnumerable<Presentation>;
 

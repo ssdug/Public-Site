@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
+using Castle.Windsor;
+using Castle.Windsor.Installer;
+using Web.Infrastructure.Windsor;
 
 namespace Web
 {
@@ -20,7 +19,7 @@ namespace Web
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
+            routes.IgnoreRoute("{*favicon}", new { favicon = @"(.*/)?favicon.ico(/.*)?" });
             routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
@@ -31,10 +30,24 @@ namespace Web
 
         protected void Application_Start()
         {
+            BootstrapContainer();
             AreaRegistration.RegisterAllAreas();
-
-            RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
+            RegisterGlobalFilters(GlobalFilters.Filters);
+            
+        }
+
+        protected void Application_End()
+        {
+            container.Dispose();
+        }
+
+        private static IWindsorContainer container;
+
+        private static void BootstrapContainer()
+        {
+            container = new WindsorContainer().Install(FromAssembly.This());
+            ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory(container.Kernel));
         }
     }
 }
