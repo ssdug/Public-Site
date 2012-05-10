@@ -25,8 +25,10 @@ namespace Web.Infrastructure.Security
                 if (!Roles.All(x => user.Roles.Contains(x)))
                     filterContext.Result = new HttpUnauthorizedResult();
             }
-
-            filterContext.Result = new HttpUnauthorizedResult();
+            else
+            {
+                filterContext.Result = new HttpUnauthorizedResult();    
+            }
         }
     }
 }
