@@ -28,8 +28,9 @@ define(
                         var accessToken = response.authResponse.accessToken;
                         loginUser(accessToken);
                     } else {
-                        login_button.on('click', function() {
-                            FB.login(function(response) {
+                        login_button.on('click', function (e) {
+                            e.preventDefault();
+                            FB.login(function (response) {
                                 FB.api('/me', onSuccess);
                             });
                         });
